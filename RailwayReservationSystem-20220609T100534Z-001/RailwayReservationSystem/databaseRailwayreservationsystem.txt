@@ -1,0 +1,53 @@
+use railway;
+CREATE TABLE `avail` (
+  `TrainNo` varchar(30) DEFAULT NULL,
+  `TrainName` varchar(30) DEFAULT NULL,
+  `FirstAC` varchar(30) DEFAULT NULL,
+  `SecondAC` varchar(30) DEFAULT NULL,
+  `ThirdAC` varchar(30) DEFAULT NULL,
+  `Sleeper` varchar(30) DEFAULT NULL
+);
+
+INSERT INTO `avail` VALUES ('2345','Agra Express','20','10','5','12'),('1365','Ajanta Express','26','0','12','11'),('3345','Ahilyanagari Express','2','9','15','22'),('9305','Akal Takht Express','10','12','15','14'),('2315','Amaravati Express','8','0','5','12');
+
+
+
+
+
+CREATE TABLE `bookticket` (
+  `pnr` int NOT NULL AUTO_INCREMENT,
+  `train_name` varchar(30) DEFAULT NULL,
+  `train_no` varchar(30) DEFAULT NULL,
+  `t_from` varchar(30) DEFAULT NULL,
+  `t_to` varchar(30) DEFAULT NULL,
+  `t_categery` varchar(30) DEFAULT NULL,
+  `p_name` varchar(30) DEFAULT NULL,
+  `p_phone` varchar(30) DEFAULT NULL,
+  `age` varchar(30) DEFAULT NULL,
+  `sex` varchar(30) DEFAULT NULL,
+  `travling_date` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`pnr`)
+);
+
+INSERT INTO `bookticket` VALUES (1,'Satabdi Express','12009','Mumbai Central','Borivali','FirstAC','Anil Kumar','9899460695','32','Male','31/12/2018'),(2,'Satabdi Express','12009','Mumbai Central','Borivali','FirstAC','Sumitra Yadav','9899460667','28','Female','31/12/2018'),(3,'Satabdi Express','12009','Surat','Bharuch Junction','FirstAC','Ram','1234567890','22','Male','31/12/2018'),(4,'Satabdi Express','12009','Mumbai Central','Bharuch Junction','FirstAC','Dinesh','9876543210','18','Male','1/1/2019'),(6,'Satabdi Express','12009','Mumbai Central','Vapi','FirstAC','Ram','43535','32','Male','1/1/2019'),(7,'Amaravati Express','18047','Jajpur K Road','Balasore','ThirdAC','xxx','4567891232','33','Male','1/1/2019'),(8,'Amaravati Express','18047','Kharagpur Junction','Kharagpur Junction','SecondAC','Monica','7895638275','24','Female','1/1/2019'),(9,'Satabdi Express','12009','Mumbai Central','Vadodara Junction','SecondAC','Ruchita','8447091636','17','Female','3/1/2019'),(12,'Satabdi Express','12009','Mumbai Central','Borivali','FirstAC','Shantanu','9621265088','28','Male','2/04/19');
+
+CREATE TABLE `stations` (
+  `tname` varchar(30) DEFAULT NULL,
+  `station` varchar(30) DEFAULT NULL,
+  `distance_Travlled` int DEFAULT NULL
+);
+
+INSERT INTO `stations` VALUES ('Satabdi Express','Mumbai Central',0),('Satabdi Express','Borivali',30),('Satabdi Express','Vapi',170),('Satabdi Express','Surat',263),('Satabdi Express','Bharuch Junction',322),('Satabdi Express','Vadodara Junction',392),('Satabdi Express','Anand Junction',427),('Satabdi Express','Nadiad Junction',446),('Satabdi Express','Ahmedabad Junction',491),('Amaravati Express','Howrah Junction',0),('Amaravati Express','Kharagpur Junction',116),('Amaravati Express','Balasore',234),('Amaravati Express','Bhadrakh',296),('Amaravati Express','Jajpur K Road',340),('Amaravati Express','Bhubaneswar',439),('Amaravati Express','Vijayawada Junction',1219),('Amaravati Express','Dharwar',1931),('Amaravati Express','Kulem',2085),('Amaravati Express','Vasco Da Gama',2147),('Ajanta Express','Manmad Junction',0),('Ajanta Express','Nagarsol',25),('Ajanta Express','Aurangabad',114),('Ajanta Express','Parbhani Junction',291),('Ajanta Express','Umri',392),('Ajanta Express','Kamareddi',513),('Ajanta Express','Medchal',593),('Ajanta Express','Bolarum',607),('Ajanta Express','Malkajgiri',617),('Ajanta Express','Secunderabad Junction',621);
+
+CREATE TABLE `trainbtw` (
+  `tno` int DEFAULT NULL,
+  `tname` varchar(30) DEFAULT NULL,
+  `source` varchar(30) DEFAULT NULL,
+  `des` varchar(30) DEFAULT NULL,
+  `FirstAC` varchar(30) DEFAULT NULL,
+  `SecondAC` varchar(30) DEFAULT NULL,
+  `ThirdAC` varchar(30) DEFAULT NULL,
+  `Sleeper` varchar(30) DEFAULT NULL
+);
+
+INSERT INTO `trainbtw` VALUES (12009,'Satabdi Express','Mumbai Central','Ahmedabad Junction','80','160','240','240'),(18047,'Amaravati Express','Howrah Junction','Vasco Da Gama','80','160','240','240'),(17063,'Ajanta Express','Manmad Junction','Secunderabad Junction','80','160','240','240');
